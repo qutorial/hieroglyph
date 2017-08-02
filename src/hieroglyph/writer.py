@@ -273,11 +273,12 @@ class BaseSlideTranslator(HTMLTranslator):
             # process this as a quote slide
 
             # first child must be a paragraph, process it as a <q> element
-            p = node.children[0]
-            self.body.append(self.starttag(node, 'q'))
-            for text_item in p:
-                text_item.walkabout(self)
-                self.body.append('</q>\n')
+            if len(node.children) > 0:
+                p = node.children[0]
+                self.body.append(self.starttag(node, 'q'))
+                for text_item in p:
+                    text_item.walkabout(self)
+                    self.body.append('</q>\n')
 
             # optional second child must be an attribution, processing as a <div>
             # following the <q>
