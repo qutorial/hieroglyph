@@ -430,7 +430,7 @@ slides.layout-faux-widescreen #next-slide-area {
 }
 
 /* line 262, ../scss/default.scss */
-strong, b {
+em, strong, b {
   font-weight: 600;
 }
 
